@@ -30,12 +30,12 @@ namespace FlagsAPI.Controllers
             return await worker.GetFlagsUrl();
         }
 
-        // GET: api/Flags/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(string flag)
-        {
-            return "value";
-        }
+        //// GET: api/Flags/5
+        //[HttpGet("{id}", Name = "Get")]
+        //public string Get(string flag)
+        //{
+        //    return "value";
+        //}
 
         // POST: api/Flags
         [HttpPost]
@@ -44,16 +44,16 @@ namespace FlagsAPI.Controllers
             return await worker.ReturnFlagUrl(flag);
         }
 
-        // PUT: api/Flags/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //// PUT: api/Flags/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// DELETE: api/ApiWithActions/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }
