@@ -36,7 +36,7 @@ namespace FlagsAPI.Models
         {
             var listFlags = await GetFlagsUrl();
             CloudBlobContainer cbc = await GetContainer();
-            string flagBuild = cbc.Uri.ToString() + "/" + flagRequest.Nome + ".png";
+            string flagBuild = cbc.Uri.ToString() + "/" + flagRequest.Nome.ToLower() + ".png";
             foreach (string flag in listFlags)
             {
                 if (flag == flagBuild)
