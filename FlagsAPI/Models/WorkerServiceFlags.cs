@@ -15,7 +15,7 @@ namespace FlagsAPI.Models
        
         public async Task<List<string>> GetFlagsUrl()
         {
-            CloudBlobContainer cbc = await GetContainer();
+            CloudBlobContainer cbc = GetContainer();
             BlobContinuationToken token = new BlobContinuationToken();
             List<string> myList = new List<string>();
             do
@@ -35,7 +35,7 @@ namespace FlagsAPI.Models
         public async Task<string> ReturnFlagUrl(Flag flagRequest)
         {
             var listFlags = await GetFlagsUrl();
-            CloudBlobContainer cbc = await GetContainer();
+            CloudBlobContainer cbc = GetContainer();
             string flagBuild = cbc.Uri.ToString() + "/" + flagRequest.Nome.ToLower() + ".png";
             foreach (string flag in listFlags)
             {
@@ -50,7 +50,7 @@ namespace FlagsAPI.Models
 
         }
 
-        public async Task<CloudBlobContainer> GetContainer()
+        public CloudBlobContainer GetContainer()
         {
             CloudStorageAccount account = CreateStorageAccountFromConnectionString();
             CloudBlobClient blobClient = account.CreateCloudBlobClient();
